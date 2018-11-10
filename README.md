@@ -53,3 +53,19 @@ Vue.set(vm.data, 2, 'Bob')
 - if using arguments use methods.
 
 ### watchers
+
+- although computed properties with setters are recommended in most cases, watchers can be used to watch a property for changes.
+- define functions with the same name as the data to watch inside the ```watchers``` object or ```'data.propertyToWatch'```
+- useful for performing asynchronous operations etc. delaying response to input.
+- watchers are passed two arguments, new and old values.
+
+### filters
+
+- pure functions.
+- way to manipulate data in a template. Chain filters together with pipes ```cost | round | formatCost('$')```
+- define filters inside ```filters``` object, filters can also take arguments
+- can also be defined in v-bind
+
+### ref
+
+
