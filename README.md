@@ -39,6 +39,19 @@
 
 ### custom directives
 
+- possible to make custom directives when wanting to work directly with DOM in an action.
+- pass to directives property or register it globally. pass name of directive then an object containing hook functions which fire during the life cycle of the element
+- ```bind(), inserted(), update(), componentUpdated(), unbind()```
+
+  ```javascript
+  Vue.directive('name', {
+    bind(el) {
+   }
+  })
+  ```
+
+- omit object and specify a function it will fire on bind and update, this is the most commonly used option
+- arguments stored in second argument, binding object.
 
 ## Vue object
 
@@ -80,9 +93,10 @@ Vue.set(vm.data, 2, 'Bob')
 - define filters inside ```filters``` object, filters can also take arguments
 - can also be defined in v-bind
 
-### Life-Cycle Hooks
+### life-cycle hooks
 
 - functions called at various points in the life-cycle of the app.
 - ```beforeCreate(), created(), beforeMount(), mount(), beforeUpdate(), updated(), beforeDestroy(), destroyed()```
 - mounted doesn't guarantee elements have been added to the dom - use this.$nextTick() inside mounted to ensure.
 
+## Transitions and Animations
