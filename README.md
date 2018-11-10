@@ -100,3 +100,43 @@ Vue.set(vm.data, 2, 'Bob')
 - mounted doesn't guarantee elements have been added to the dom - use this.$nextTick() inside mounted to ensure.
 
 ## Transitions and Animations
+
+### css
+
+- transitioning one or more CSS property between values or toggling.
+
+```html
+<button @click="divVisible = !divVisible">Toggle visibility</button>
+<div v-if="divVisible">This content is sometimes hidden</div>
+```
+
+```html
+<transition name="fade">
+  <div v-if="divVisible">This content is sometimes hidden</div>
+</transition>
+```
+
+```html
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+</style>
+```
+
+- classes added at various points of the transition to refer to ```{name}-enter-active?, -leave-active?```
+
+
+### js
+
+```html
+<transition
+  v-on:before-enter="handleBeforeEnter"
+  v-on:enter="handleEnter"
+  v-on:leave="handleLeave">
+  <div v-if="divVisible">...</div>
+</transition>
+```
