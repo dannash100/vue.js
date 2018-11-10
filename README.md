@@ -3,19 +3,15 @@
 *```vue init webpack``` to create project*
 
 
-## template syntax
+## Template syntax
 
-### conditions
-
-#### v-if, v-show, v-else-if, v-else
+### v-if, v-show, v-else-if, v-else
 
 - if value of v-if is falsey the element will not be outputted to the DOM
 - v-show uses CSS to show hide elements.
 - v-if has a performance cost.
 
-### looping
-
-#### v-for
+### v-for
 
 - ```v-for="dog in dogs"``` for arrays.
 - ```v-for="(rent, city) in average rent"``` for objects.
@@ -29,7 +25,10 @@
 - ```:disabled="buttonDisabled"```
 - ```v-model="input text"```works with inputs.
 
-## reactivity
+
+## Vue object
+
+### reactivity
 
 - reactivity works by modifying every object added to the data object, so that Vue is notified by its changes.
 - updating multiple properties at same time, use Object.assign to create a new object and override the only object.
@@ -43,3 +42,14 @@ Vue.set(vm.formData, 'name', 'Some User')
 vm.data.splice(2, 1 'Bob')
 Vue.set(vm.data, 2, 'Bob')
 ```
+
+### methods and computed properties
+
+- defined in the ```methods``` object.
+- use ```this``` to refer to access data object and other methods.
+- functions defined in the ```computed``` object live halfway between data object properties and methods, can refer to data without use of ```this```.
+- computed functions will only be called once and thereafter the cached value will be used, it will only be updated when a dependency of the method changes, i.e the data it relies on is updated.
+- computed properties can be changed into an object to make use of get and set keywords.
+- if using arguments use methods.
+
+### watchers
