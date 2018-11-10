@@ -1,2 +1,2 @@
-# vue.js
-first look at vue
+# Vue projects
+*```vue init webpack``` to create project*
