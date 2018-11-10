@@ -25,6 +25,20 @@
 - ```:disabled="buttonDisabled"```
 - ```v-model="input text"```works with inputs.
 
+### ref
+
+- access element directly in the DOM
+- set ref attribute of element to string, then reference with ```this.$refs``` objects.
+
+### inputs and events
+
+- ```@type='method'``` to bind event listeners, event object is passed automatically as the first argument.
+- can also use inline code ```@click='count++'```
+- event modifications can be added ```@click.prevent``` ```@click.capture```
+- specify keycodes ```@keyup.27='method'```
+
+### custom directives
+
 
 ## Vue object
 
@@ -66,6 +80,9 @@ Vue.set(vm.data, 2, 'Bob')
 - define filters inside ```filters``` object, filters can also take arguments
 - can also be defined in v-bind
 
-### ref
+### Life-Cycle Hooks
 
+- functions called at various points in the life-cycle of the app.
+- ```beforeCreate(), created(), beforeMount(), mount(), beforeUpdate(), updated(), beforeDestroy(), destroyed()```
+- mounted doesn't guarantee elements have been added to the dom - use this.$nextTick() inside mounted to ensure.
 
